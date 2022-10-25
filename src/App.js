@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import {useState} from 'react';
+import MovieDisplay from './components/MovieDisplay';
+import Form from './components/Form';
+import './App.css'
+
+
 import './App.css';
 
 function App() {
-  return (
+  //^state to hold the movie data
+  const [movie, setMovie] = useState(null)
+
+  //^ Function to fetch movie data
+  const getMovie = async (searchTerm) => {
+    const res = fetch(`https://www.omdbapi.com/?apikey=98e3fb1f&t=${searchTerm}`)
+    const data = await (await res).json()
+    setMovie(data); // ^set the data into our state
+  }
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React Movies</h1>
+      <Form movieSearch={getMovie}/>
+      <MovieDisplay/>
+      
     </div>
   );
 }
