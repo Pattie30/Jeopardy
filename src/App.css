@@ -1,5 +1,35 @@
+.body {
+    background-color: url('./images/safari.jpg');
+}
+
+
+.scoreBtn {
+  color: #fedd70;
+}
+
+.increase {
+   background-color: greenyellow;
+}
+.decrease {
+    background-color: coral;
+}
+
+.reset{
+    background-color: red;
+}
+
+
+.wrapper {
+  background-color: skyblue;
+  color: white;
+  text-align: center;
+}
+
+
 .App {
   text-align: center;
+  background-color: steelblue;
+  color: white;
 }
 
 .App-logo {
@@ -14,7 +44,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: steelblue;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
